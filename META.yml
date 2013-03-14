@@ -1,0 +1,54 @@
+---
+abstract: '...'
+author:
+  - 'Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>'
+build_requires:
+  Module::Build::Pluggable::CPANfile: 0.02
+  Module::Build::Pluggable::GithubMeta: 0
+  Test::More: 0.98
+  Test::Requires: 0
+configure_requires:
+  Module::Build: 0.38
+  Module::Build::Pluggable: 0
+  Module::Build::Pluggable::CPANfile: 0.02
+  Module::Build::Pluggable::GithubMeta: 0
+dynamic_config: 0
+generated_by: 'Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Ukigumo-Agent
+no_index:
+  directory:
+    - inc
+provides:
+  Ukigumo::Agent:
+    file: lib/Ukigumo/Agent.pm
+    version: v0.0.1
+  Ukigumo::Agent::Dispatcher:
+    file: lib/Ukigumo/Agent/Dispatcher.pm
+    version: 0
+  Ukigumo::Agent::Manager:
+    file: lib/Ukigumo/Agent/Manager.pm
+    version: 0
+  Ukigumo::Agent::View:
+    file: lib/Ukigumo/Agent/View.pm
+    version: 0
+requires:
+  Amon2: 0
+  Data::Thunk: 0
+  Data::Validator: 0
+  File::ShareDir: 1.00
+  Plack: 0.9949
+  Text::Xslate: 0
+  Time::Duration: 0
+  Twiggy: 0
+  Ukigumo::Client: 0.15
+  parent: 0
+  perl: 5.008005
+resources:
+  homepage: https://github.com/ukigumo/Ukigumo-Agent/tree
+  license: http://dev.perl.org/licenses/
+  repository: git://github.com/ukigumo/Ukigumo-Agent.git
+version: v0.0.1
