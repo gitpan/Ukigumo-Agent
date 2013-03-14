@@ -25,7 +25,7 @@ no_index:
 provides:
   Ukigumo::Agent:
     file: lib/Ukigumo/Agent.pm
-    version: v0.0.3
+    version: v0.0.5
   Ukigumo::Agent::Dispatcher:
     file: lib/Ukigumo/Agent/Dispatcher.pm
     version: 0
@@ -37,9 +37,9 @@ provides:
     version: 0
 requires:
   Amon2: 0
-  Data::Thunk: 0
   Data::Validator: 0
   File::ShareDir: 1.00
+  MRO::Compat: 0
   Plack: 0.9949
   Text::Xslate: 0
   Time::Duration: 0
@@ -51,4 +51,4 @@ resources:
   homepage: https://github.com/ukigumo/Ukigumo-Agent/tree
   license: http://dev.perl.org/licenses/
   repository: git://github.com/ukigumo/Ukigumo-Agent.git
-version: v0.0.3
+version: v0.0.5
