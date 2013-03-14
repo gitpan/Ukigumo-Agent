@@ -2,7 +2,7 @@ package Ukigumo::Agent;
 use strict;
 use warnings;
 use 5.008005;
-our $VERSION = '0.0.2';
+our $VERSION = '0.0.3';
 use parent qw(Amon2 Amon2::Web);
 
 sub config { +{ } }
@@ -35,17 +35,11 @@ __END__
 
 =head1 NAME
 
-Ukigumo::Agent - ...
-
-=head1 SYNOPSIS
-
-  use Ukigumo::Agent;
+Ukigumo::Agent - Ukigumo test runner server
 
 =head1 DESCRIPTION
 
-Ukigumo::Agent is
-
-B<THIS IS A DEVELOPMENT RELEASE. API MAY CHANGE WITHOUT NOTICE>.
+Look L<ukigumo-agent.pl>.
 
 =head1 AUTHOR
 
