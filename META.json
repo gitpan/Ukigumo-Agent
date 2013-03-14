@@ -54,7 +54,7 @@
    "provides" : {
       "Ukigumo::Agent" : {
          "file" : "lib/Ukigumo/Agent.pm",
-         "version" : "v0.0.1"
+         "version" : "v0.0.2"
       },
       "Ukigumo::Agent::Dispatcher" : {
          "file" : "lib/Ukigumo/Agent/Dispatcher.pm",
@@ -79,5 +79,5 @@
          "url" : "git://github.com/ukigumo/Ukigumo-Agent.git"
       }
    },
-   "version" : "v0.0.1"
+   "version" : "v0.0.2"
 }
