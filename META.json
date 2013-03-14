@@ -37,7 +37,8 @@
       },
       "runtime" : {
          "requires" : {
-            "Amon2" : "0",
+            "Amon2" : "3.76",
+            "Amon2::Plugin::ShareDir" : "0",
             "Data::Validator" : "0",
             "File::ShareDir" : "1.00",
             "MRO::Compat" : "0",
@@ -54,7 +55,7 @@
    "provides" : {
       "Ukigumo::Agent" : {
          "file" : "lib/Ukigumo/Agent.pm",
-         "version" : "v0.0.5"
+         "version" : "v0.0.6"
       },
       "Ukigumo::Agent::Dispatcher" : {
          "file" : "lib/Ukigumo/Agent/Dispatcher.pm",
@@ -79,5 +80,5 @@
          "url" : "git://github.com/ukigumo/Ukigumo-Agent.git"
       }
    },
-   "version" : "v0.0.5"
+   "version" : "v0.0.6"
 }
