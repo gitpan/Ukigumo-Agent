@@ -17,7 +17,19 @@ meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Ukigumo-Agent
-provides: {}
+provides:
+  Ukigumo::Agent:
+    file: lib/Ukigumo/Agent.pm
+    version: v0.0.8
+  Ukigumo::Agent::Dispatcher:
+    file: lib/Ukigumo/Agent/Dispatcher.pm
+    version: 0
+  Ukigumo::Agent::Manager:
+    file: lib/Ukigumo/Agent/Manager.pm
+    version: 0
+  Ukigumo::Agent::View:
+    file: lib/Ukigumo/Agent/View.pm
+    version: 0
 requires:
   Amon2: 3.76
   Amon2::Plugin::ShareDir: 0
@@ -34,4 +46,4 @@ resources:
   bugtracker: https://github.com/ukigumo/Ukigumo-Agent/issues
   homepage: https://github.com/ukigumo/Ukigumo-Agent
   repository: git://github.com/ukigumo/Ukigumo-Agent.git
-version: 0.0.7
+version: 0.0.8

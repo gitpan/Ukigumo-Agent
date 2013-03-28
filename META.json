@@ -42,7 +42,21 @@
          }
       }
    },
-   "provides" : {},
+   "provides" : {
+      "Ukigumo::Agent" : {
+         "file" : "lib/Ukigumo/Agent.pm",
+         "version" : "v0.0.8"
+      },
+      "Ukigumo::Agent::Dispatcher" : {
+         "file" : "lib/Ukigumo/Agent/Dispatcher.pm"
+      },
+      "Ukigumo::Agent::Manager" : {
+         "file" : "lib/Ukigumo/Agent/Manager.pm"
+      },
+      "Ukigumo::Agent::View" : {
+         "file" : "lib/Ukigumo/Agent/View.pm"
+      }
+   },
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
@@ -54,5 +68,5 @@
          "web" : "https://github.com/ukigumo/Ukigumo-Agent"
       }
    },
-   "version" : "0.0.7"
+   "version" : "0.0.8"
 }
