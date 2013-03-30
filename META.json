@@ -14,38 +14,45 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "Module::Build" : "0.38",
-            "Module::Build::Pluggable" : 0,
-            "Module::Build::Pluggable::CPANfile" : 0,
-            "Module::Build::Pluggable::GithubMeta" : 0
+            "CPAN::Meta" : "0",
+            "Module::Build" : "0.38"
+         }
+      },
+      "develop" : {
+         "requires" : {
+            "Pod::Wordlist::hanekomu" : "0",
+            "Test::CPAN::Meta" : "0",
+            "Test::MinimumVersion" : "0.10108",
+            "Test::Pod" : "1.41",
+            "Test::Spelling" : "0"
          }
       },
       "runtime" : {
          "requires" : {
-            "Amon2" : 3.76,
-            "Amon2::Plugin::ShareDir" : 0,
-            "Data::Validator" : 0,
-            "File::ShareDir" : 0,
-            "MRO::Compat" : 0,
+            "Amon2" : "3.76",
+            "Amon2::Plugin::ShareDir" : "0",
+            "Data::Validator" : "0",
+            "File::ShareDir" : "0",
+            "MRO::Compat" : "0",
             "Plack" : "0.9949",
-            "Text::Xslate" : 0,
-            "Time::Duration" : 0,
-            "Twiggy" : 0,
+            "Text::Xslate" : "0",
+            "Time::Duration" : "0",
+            "Twiggy" : "0",
             "Ukigumo::Client" : "0.15",
-            "parent" : 0
+            "parent" : "0"
          }
       },
       "test" : {
          "requires" : {
             "Test::More" : "0.98",
-            "Test::Requires" : 0
+            "Test::Requires" : "0"
          }
       }
    },
    "provides" : {
       "Ukigumo::Agent" : {
          "file" : "lib/Ukigumo/Agent.pm",
-         "version" : "v0.0.8"
+         "version" : "v0.0.9"
       },
       "Ukigumo::Agent::Dispatcher" : {
          "file" : "lib/Ukigumo/Agent/Dispatcher.pm"
@@ -68,5 +75,5 @@
          "web" : "https://github.com/ukigumo/Ukigumo-Agent"
       }
    },
-   "version" : "0.0.8"
+   "version" : "0.0.9"
 }
