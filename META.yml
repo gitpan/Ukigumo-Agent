@@ -4,7 +4,6 @@ author:
   - 'Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>'
 build_requires:
   Test::More: 0.98
-  Test::Requires: 0
 configure_requires:
   CPAN::Meta: 0
   Module::Build: 0.38
@@ -18,7 +17,7 @@ name: Ukigumo-Agent
 provides:
   Ukigumo::Agent:
     file: lib/Ukigumo/Agent.pm
-    version: v0.0.9
+    version: v0.0.10
   Ukigumo::Agent::Dispatcher:
     file: lib/Ukigumo/Agent/Dispatcher.pm
     version: 0
@@ -34,6 +33,7 @@ requires:
   Data::Validator: 0
   File::ShareDir: 0
   MRO::Compat: 0
+  Mouse: 0
   Plack: 0.9949
   Text::Xslate: 0
   Time::Duration: 0
@@ -44,4 +44,6 @@ resources:
   bugtracker: https://github.com/ukigumo/Ukigumo-Agent/issues
   homepage: https://github.com/ukigumo/Ukigumo-Agent
   repository: git://github.com/ukigumo/Ukigumo-Agent.git
-version: 0.0.9
+version: 0.0.10
+x_contributors:
+  - 'tokuhirom <tokuhirom@gmail.com>'

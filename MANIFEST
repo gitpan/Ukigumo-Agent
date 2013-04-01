@@ -24,3 +24,8 @@ share/static/robots.txt
 share/tmpl/index.tt
 t/00_compile.t
 xt/02_perlcritic.t
+Build.PL
+LICENSE
+META.json
+META.yml
+MANIFEST
