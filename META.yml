@@ -6,27 +6,34 @@ build_requires:
   Test::More: 0.98
 configure_requires:
   CPAN::Meta: 0
+  CPAN::Meta::Prereqs: 0
   Module::Build: 0.38
 dynamic_config: 0
-generated_by: 'Minilla/v0.0.49, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Minilla/v0.5.3, CPAN::Meta::Converter version 2.130880'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Ukigumo-Agent
+no_index:
+  directory:
+    - t
+    - xt
+    - inc
+    - share
+    - eg
+    - examples
+    - author
 provides:
   Ukigumo::Agent:
     file: lib/Ukigumo/Agent.pm
-    version: v0.0.10
+    version: v0.0.11
   Ukigumo::Agent::Dispatcher:
     file: lib/Ukigumo/Agent/Dispatcher.pm
-    version: 0
   Ukigumo::Agent::Manager:
     file: lib/Ukigumo/Agent/Manager.pm
-    version: 0
   Ukigumo::Agent::View:
     file: lib/Ukigumo/Agent/View.pm
-    version: 0
 requires:
   Amon2: 3.76
   Amon2::Plugin::ShareDir: 0
@@ -40,10 +47,11 @@ requires:
   Twiggy: 0
   Ukigumo::Client: 0.15
   parent: 0
+  perl: 5.008005
 resources:
   bugtracker: https://github.com/ukigumo/Ukigumo-Agent/issues
   homepage: https://github.com/ukigumo/Ukigumo-Agent
   repository: git://github.com/ukigumo/Ukigumo-Agent.git
-version: 0.0.10
+version: v0.0.11
 x_contributors:
   - 'tokuhirom <tokuhirom@gmail.com>'
