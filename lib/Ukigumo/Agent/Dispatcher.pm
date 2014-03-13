@@ -3,9 +3,11 @@ use strict;
 use warnings;
 use utf8;
 
-use Amon2::Web::Dispatcher::Lite;
+use Amon2::Web::Dispatcher::RouterBoom;
 use Ukigumo::Agent::Manager;
 use Data::Validator;
+use JSON;
+use Log::Minimal;
 
 get '/' => sub {
     my $c = shift;
@@ -42,5 +44,42 @@ post '/api/v0/enqueue' => sub {
     return $c->render_json(+{});
 };
 
-1;
+post '/api/github_hook' => sub {
+    my $c = shift;
 
+    infof("playload: %s", $c->req->param('payload'));
+    my $payload = from_json $c->req->param('payload');
+    my $args;
+    eval {
+        # TODO How to pass commit id?
+        # my @commits = @{$payload->{commits}};
+        #   ...
+        # commit => $commits[$#commits]->{id},
+        my $repo_url = $payload->{repository}->{url};
+        if ($ENV{UKIGUMO_AGENT_GITHUB_HOOK_FORCE_GIT_URL}) {
+            # From: https://github.com/tokuhirom/plenv.git
+            # To: git@github.com:tokuhirom/plenv.git
+            $repo_url =~ s!\Ahttps?://([^/]+)/!git\@$1:!;
+        }
+        (my $branch = $payload->{ref}) =~ s!\Arefs/heads/!!;
+        $args = +{
+            repository       => $repo_url,
+            branch           => $branch || $payload->{repository}->{master_branch},
+            compare_url      => $payload->{compare} || '',
+            repository_owner => $payload->{repository}->{owner}->{name} || '',
+            repository_name  => $payload->{repository}->{name} || '',
+        };
+    };
+    if (my $e = $@) {
+        warnf("An error occured: %s", $e);
+        my $res = $c->render_json({errors => $e});
+        $res->code(400);
+        return $res;
+    }
+
+    $c->manager->register_job($args);
+
+    return $c->render_json(+{});
+};
+
+1;

@@ -3,17 +3,17 @@ abstract: 'Ukigumo test runner server'
 author:
   - 'Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>'
 build_requires:
-  Test::More: 0.98
+  Test::More: '0.98'
 configure_requires:
-  CPAN::Meta: 0
-  CPAN::Meta::Prereqs: 0
-  Module::Build: 0.38
+  CPAN::Meta: '0'
+  CPAN::Meta::Prereqs: '0'
+  Module::Build: '0.38'
 dynamic_config: 0
-generated_by: 'Minilla/v0.5.3, CPAN::Meta::Converter version 2.130880'
+generated_by: 'Minilla/v0.11.0, CPAN::Meta::Converter version 2.133380'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  version: '1.4'
 name: Ukigumo-Agent
 no_index:
   directory:
@@ -24,10 +24,11 @@ no_index:
     - eg
     - examples
     - author
+    - builder
 provides:
   Ukigumo::Agent:
     file: lib/Ukigumo/Agent.pm
-    version: v0.0.11
+    version: v0.0.12
   Ukigumo::Agent::Dispatcher:
     file: lib/Ukigumo/Agent/Dispatcher.pm
   Ukigumo::Agent::Manager:
@@ -35,23 +36,28 @@ provides:
   Ukigumo::Agent::View:
     file: lib/Ukigumo/Agent/View.pm
 requires:
-  Amon2: 3.76
-  Amon2::Plugin::ShareDir: 0
-  Data::Validator: 0
-  File::ShareDir: 0
-  MRO::Compat: 0
-  Mouse: 0
-  Plack: 0.9949
-  Text::Xslate: 0
-  Time::Duration: 0
-  Twiggy: 0
-  Ukigumo::Client: 0.15
-  parent: 0
-  perl: 5.008005
+  Amon2: '6'
+  Amon2::Plugin::ShareDir: '0'
+  Data::Validator: '0'
+  File::ShareDir: '0'
+  Log::Minimal: '0'
+  MRO::Compat: '0'
+  Mouse: '0'
+  Plack: '0.9949'
+  Router::Boom: '0'
+  Text::Xslate: '0'
+  Time::Duration: '0'
+  Twiggy: '0'
+  Ukigumo::Client: '0.22'
+  parent: '0'
+  perl: '5.010001'
 resources:
   bugtracker: https://github.com/ukigumo/Ukigumo-Agent/issues
   homepage: https://github.com/ukigumo/Ukigumo-Agent
   repository: git://github.com/ukigumo/Ukigumo-Agent.git
-version: v0.0.11
+version: v0.0.12
 x_contributors:
-  - 'tokuhirom <tokuhirom@gmail.com>'
+  - 'Tomohiro Hosaka <bokutin@bokut.in>'
+  - 'mattn <mattn.jp@gmail.com>'
+  - 'Tokuhiro Matsuno <tokuhirom@gmail.com>'
+  - 'moznion <moznion@gmail.com>'

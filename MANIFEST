@@ -8,6 +8,7 @@ lib/Ukigumo/Agent.pm
 lib/Ukigumo/Agent/Dispatcher.pm
 lib/Ukigumo/Agent/Manager.pm
 lib/Ukigumo/Agent/View.pm
+minil.toml
 script/ukigumo-agent
 share/static/bootstrap/css/bootstrap-responsive.css
 share/static/bootstrap/css/bootstrap-responsive.min.css
@@ -21,6 +22,7 @@ share/static/img/ukigumo-chan.png
 share/static/robots.txt
 share/tmpl/index.tt
 t/00_compile.t
+t/01_root.t
 xt/02_perlcritic.t
 META.yml
 MANIFEST
