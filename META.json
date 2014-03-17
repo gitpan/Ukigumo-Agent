@@ -4,7 +4,7 @@
       "Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.11.0",
+   "generated_by" : "Minilla/v0.12.0",
    "license" : [
       "perl_5"
    ],
@@ -55,7 +55,7 @@
             "Text::Xslate" : "0",
             "Time::Duration" : "0",
             "Twiggy" : "0",
-            "Ukigumo::Client" : "0.22",
+            "Ukigumo::Client" : "0.23",
             "parent" : "0",
             "perl" : "5.010001"
          }
@@ -69,7 +69,7 @@
    "provides" : {
       "Ukigumo::Agent" : {
          "file" : "lib/Ukigumo/Agent.pm",
-         "version" : "v0.0.12"
+         "version" : "v0.0.13"
       },
       "Ukigumo::Agent::Dispatcher" : {
          "file" : "lib/Ukigumo/Agent/Dispatcher.pm"
@@ -84,15 +84,15 @@
    "release_status" : "stable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com/ukigumo/Ukigumo-Agent/issues"
+         "web" : "https://github.com/moznion/Ukigumo-Agent/issues"
       },
-      "homepage" : "https://github.com/ukigumo/Ukigumo-Agent",
+      "homepage" : "https://github.com/moznion/Ukigumo-Agent",
       "repository" : {
-         "url" : "git://github.com/ukigumo/Ukigumo-Agent.git",
-         "web" : "https://github.com/ukigumo/Ukigumo-Agent"
+         "url" : "git://github.com/moznion/Ukigumo-Agent.git",
+         "web" : "https://github.com/moznion/Ukigumo-Agent"
       }
    },
-   "version" : "v0.0.12",
+   "version" : "v0.0.13",
    "x_contributors" : [
       "Tomohiro Hosaka <bokutin@bokut.in>",
       "mattn <mattn.jp@gmail.com>",
