@@ -9,7 +9,7 @@ configure_requires:
   CPAN::Meta::Prereqs: '0'
   Module::Build: '0.38'
 dynamic_config: 0
-generated_by: 'Minilla/v0.12.0, CPAN::Meta::Converter version 2.133380'
+generated_by: 'Minilla/v0.13.0, CPAN::Meta::Converter version 2.133380'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -28,7 +28,7 @@ no_index:
 provides:
   Ukigumo::Agent:
     file: lib/Ukigumo/Agent.pm
-    version: v0.0.16
+    version: v0.1.0
   Ukigumo::Agent::Dispatcher:
     file: lib/Ukigumo/Agent/Dispatcher.pm
   Ukigumo::Agent::Manager:
@@ -48,16 +48,16 @@ requires:
   Text::Xslate: '0'
   Time::Duration: '0'
   Twiggy: '0'
-  Ukigumo::Client: '0.25'
+  Ukigumo::Client: '0.26'
   parent: '0'
   perl: '5.010001'
 resources:
   bugtracker: https://github.com/ukigumo/Ukigumo-Agent/issues
   homepage: https://github.com/ukigumo/Ukigumo-Agent
   repository: git://github.com/ukigumo/Ukigumo-Agent.git
-version: v0.0.16
+version: v0.1.0
 x_contributors:
   - 'Tomohiro Hosaka <bokutin@bokut.in>'
   - 'mattn <mattn.jp@gmail.com>'
-  - 'Tokuhiro Matsuno <tokuhirom@gmail.com>'
   - 'moznion <moznion@gmail.com>'
+  - 'Tokuhiro Matsuno <tokuhirom@gmail.com>'

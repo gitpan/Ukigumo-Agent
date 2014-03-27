@@ -4,7 +4,7 @@
       "Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.12.0",
+   "generated_by" : "Minilla/v0.13.0",
    "license" : [
       "perl_5"
    ],
@@ -36,7 +36,7 @@
       "develop" : {
          "requires" : {
             "Test::CPAN::Meta" : "0",
-            "Test::MinimumVersion" : "0.10108",
+            "Test::MinimumVersion::Fast" : "0.04",
             "Test::Pod" : "1.41",
             "Test::Spellunker" : "v0.2.7"
          }
@@ -55,7 +55,7 @@
             "Text::Xslate" : "0",
             "Time::Duration" : "0",
             "Twiggy" : "0",
-            "Ukigumo::Client" : "0.25",
+            "Ukigumo::Client" : "0.26",
             "parent" : "0",
             "perl" : "5.010001"
          }
@@ -69,7 +69,7 @@
    "provides" : {
       "Ukigumo::Agent" : {
          "file" : "lib/Ukigumo/Agent.pm",
-         "version" : "v0.0.16"
+         "version" : "v0.1.0"
       },
       "Ukigumo::Agent::Dispatcher" : {
          "file" : "lib/Ukigumo/Agent/Dispatcher.pm"
@@ -92,11 +92,11 @@
          "web" : "https://github.com/ukigumo/Ukigumo-Agent"
       }
    },
-   "version" : "v0.0.16",
+   "version" : "v0.1.0",
    "x_contributors" : [
       "Tomohiro Hosaka <bokutin@bokut.in>",
       "mattn <mattn.jp@gmail.com>",
-      "Tokuhiro Matsuno <tokuhirom@gmail.com>",
-      "moznion <moznion@gmail.com>"
+      "moznion <moznion@gmail.com>",
+      "Tokuhiro Matsuno <tokuhirom@gmail.com>"
    ]
 }
