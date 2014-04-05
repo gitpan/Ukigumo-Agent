@@ -3,7 +3,11 @@ abstract: 'Ukigumo test runner server'
 author:
   - 'Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>'
 build_requires:
+  File::Temp: '0'
+  LWP::UserAgent: '0'
+  Plack::Loader: '0'
   Test::More: '0.98'
+  Test::TCP: '0'
 configure_requires:
   CPAN::Meta: '0'
   CPAN::Meta::Prereqs: '0'
@@ -28,7 +32,7 @@ no_index:
 provides:
   Ukigumo::Agent:
     file: lib/Ukigumo/Agent.pm
-    version: v0.1.1
+    version: v0.1.2
   Ukigumo::Agent::Dispatcher:
     file: lib/Ukigumo/Agent/Dispatcher.pm
   Ukigumo::Agent::Manager:
@@ -38,26 +42,30 @@ provides:
 requires:
   Amon2: '6'
   Amon2::Plugin::ShareDir: '0'
+  Coro: '0'
   Data::Validator: '0'
-  File::ShareDir: '0'
+  Getopt::Long: '2.42'
+  JSON: '2'
+  List::Util: '0'
   Log::Minimal: '0'
-  MRO::Compat: '0'
   Mouse: '0'
   Plack: '0.9949'
-  Router::Boom: '0'
+  Pod::Usage: '0'
   Text::Xslate: '0'
   Time::Duration: '0'
   Twiggy: '0'
-  Ukigumo::Client: '0.26'
+  Ukigumo::Client: '0.27'
+  autodie: '0'
   parent: '0'
   perl: '5.010001'
+  version: '0'
 resources:
   bugtracker: https://github.com/ukigumo/Ukigumo-Agent/issues
   homepage: https://github.com/ukigumo/Ukigumo-Agent
   repository: git://github.com/ukigumo/Ukigumo-Agent.git
-version: v0.1.1
+version: v0.1.2
 x_contributors:
   - 'Tomohiro Hosaka <bokutin@bokut.in>'
   - 'mattn <mattn.jp@gmail.com>'
-  - 'moznion <moznion@gmail.com>'
   - 'Tokuhiro Matsuno <tokuhirom@gmail.com>'
+  - 'moznion <moznion@gmail.com>'
