@@ -32,7 +32,7 @@ no_index:
 provides:
   Ukigumo::Agent:
     file: lib/Ukigumo/Agent.pm
-    version: v0.1.2
+    version: v0.1.3
   Ukigumo::Agent::Dispatcher:
     file: lib/Ukigumo/Agent/Dispatcher.pm
   Ukigumo::Agent::Manager:
@@ -54,7 +54,7 @@ requires:
   Text::Xslate: '0'
   Time::Duration: '0'
   Twiggy: '0'
-  Ukigumo::Client: '0.27'
+  Ukigumo::Client: '0.29'
   autodie: '0'
   parent: '0'
   perl: '5.010001'
@@ -63,7 +63,7 @@ resources:
   bugtracker: https://github.com/ukigumo/Ukigumo-Agent/issues
   homepage: https://github.com/ukigumo/Ukigumo-Agent
   repository: git://github.com/ukigumo/Ukigumo-Agent.git
-version: v0.1.2
+version: v0.1.3
 x_contributors:
   - 'Tomohiro Hosaka <bokutin@bokut.in>'
   - 'mattn <mattn.jp@gmail.com>'
