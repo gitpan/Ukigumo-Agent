@@ -4,7 +4,7 @@
       "Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.14.1",
+   "generated_by" : "Minilla/v0.15.0",
    "license" : [
       "perl_5"
    ],
@@ -28,9 +28,7 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "CPAN::Meta" : "0",
-            "CPAN::Meta::Prereqs" : "0",
-            "Module::Build" : "0.38"
+            "Module::Build::Tiny" : "0.035"
          }
       },
       "develop" : {
@@ -60,7 +58,7 @@
             "Text::Xslate" : "0",
             "Time::Duration" : "0",
             "Twiggy" : "0",
-            "Ukigumo::Client" : "0.30",
+            "Ukigumo::Client" : "0.31",
             "autodie" : "0",
             "parent" : "0",
             "perl" : "5.010001",
@@ -69,6 +67,7 @@
       },
       "test" : {
          "requires" : {
+            "Capture::Tiny" : "0",
             "File::Temp" : "0",
             "LWP::UserAgent" : "0",
             "Plack::Loader" : "0",
@@ -80,10 +79,13 @@
    "provides" : {
       "Ukigumo::Agent" : {
          "file" : "lib/Ukigumo/Agent.pm",
-         "version" : "v0.1.4"
+         "version" : "v0.1.5"
       },
       "Ukigumo::Agent::Dispatcher" : {
          "file" : "lib/Ukigumo/Agent/Dispatcher.pm"
+      },
+      "Ukigumo::Agent::Logger" : {
+         "file" : "lib/Ukigumo/Agent/Logger.pm"
       },
       "Ukigumo::Agent::Manager" : {
          "file" : "lib/Ukigumo/Agent/Manager.pm"
@@ -103,7 +105,8 @@
          "web" : "https://github.com/ukigumo/Ukigumo-Agent"
       }
    },
-   "version" : "v0.1.4",
+   "version" : "v0.1.5",
+   "x_authority" : "cpan:TOKUHIROM",
    "x_contributors" : [
       "Tomohiro Hosaka <bokutin@bokut.in>",
       "mattn <mattn.jp@gmail.com>",

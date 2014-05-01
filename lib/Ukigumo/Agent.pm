@@ -2,12 +2,13 @@ package Ukigumo::Agent;
 use strict;
 use warnings;
 use 5.008005;
-use version; our $VERSION = version->declare("v0.1.4");
+use version; our $VERSION = version->declare("v0.1.5");
 use parent qw(Amon2 Amon2::Web);
 
 sub config { +{ } }
 
 use Ukigumo::Agent::Dispatcher;
+use Ukigumo::Agent::Logger;
 
 __PACKAGE__->load_plugins(qw(Web::JSON ShareDir));
 
@@ -26,6 +27,11 @@ sub dispatch {
     my $_manager;
     sub register_manager { $_manager = $_[1] }
     sub manager { $_manager || die "Missing manager" }
+}
+
+{
+    my $_logger = Ukigumo::Agent::Logger->new;
+    sub logger { $_logger }
 }
 
 1;

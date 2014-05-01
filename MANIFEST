@@ -4,8 +4,10 @@ LICENSE
 META.json
 README.md
 cpanfile
+eg/ukigumo.yml
 lib/Ukigumo/Agent.pm
 lib/Ukigumo/Agent/Dispatcher.pm
+lib/Ukigumo/Agent/Logger.pm
 lib/Ukigumo/Agent/Manager.pm
 lib/Ukigumo/Agent/View.pm
 minil.toml
@@ -23,6 +25,14 @@ share/static/robots.txt
 share/tmpl/index.tt
 t/00_compile.t
 t/01_root.t
+t/02_github_hook_endpoint.t
+t/03_enqueue.t
+t/Util.pm
+t/logger.t
+t/manager/job_queue.t
+t/manager/run_job/exceptional.t
+t/manager/run_job/normal.t
+t/manager/run_job/timeout.t
 xt/02_perlcritic.t
 META.yml
 MANIFEST
