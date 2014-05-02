@@ -79,7 +79,7 @@
    "provides" : {
       "Ukigumo::Agent" : {
          "file" : "lib/Ukigumo/Agent.pm",
-         "version" : "v0.1.5"
+         "version" : "v0.1.6"
       },
       "Ukigumo::Agent::Dispatcher" : {
          "file" : "lib/Ukigumo/Agent/Dispatcher.pm"
@@ -105,7 +105,7 @@
          "web" : "https://github.com/ukigumo/Ukigumo-Agent"
       }
    },
-   "version" : "v0.1.5",
+   "version" : "v0.1.6",
    "x_authority" : "cpan:TOKUHIROM",
    "x_contributors" : [
       "Tomohiro Hosaka <bokutin@bokut.in>",

@@ -31,7 +31,7 @@ no_index:
 provides:
   Ukigumo::Agent:
     file: lib/Ukigumo/Agent.pm
-    version: v0.1.5
+    version: v0.1.6
   Ukigumo::Agent::Dispatcher:
     file: lib/Ukigumo/Agent/Dispatcher.pm
   Ukigumo::Agent::Logger:
@@ -64,7 +64,7 @@ resources:
   bugtracker: https://github.com/ukigumo/Ukigumo-Agent/issues
   homepage: https://github.com/ukigumo/Ukigumo-Agent
   repository: git://github.com/ukigumo/Ukigumo-Agent.git
-version: v0.1.5
+version: v0.1.6
 x_authority: cpan:TOKUHIROM
 x_contributors:
   - 'Tomohiro Hosaka <bokutin@bokut.in>'
