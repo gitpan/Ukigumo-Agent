@@ -4,7 +4,7 @@
       "Tokuhiro Matsuno <tokuhirom AAJKLFJEF@ GMAIL COM>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v0.15.0",
+   "generated_by" : "Minilla/v1.1.0",
    "license" : [
       "perl_5"
    ],
@@ -48,6 +48,8 @@
             "Amon2::Plugin::ShareDir" : "0",
             "Coro" : "0",
             "Data::Validator" : "0",
+            "File::Path" : "0",
+            "File::Spec" : "0",
             "Getopt::Long" : "2.42",
             "JSON" : "2",
             "List::Util" : "0",
@@ -59,6 +61,7 @@
             "Time::Duration" : "0",
             "Twiggy" : "0",
             "Ukigumo::Client" : "0.31",
+            "Ukigumo::Common" : "0.10",
             "autodie" : "0",
             "parent" : "0",
             "perl" : "5.010001",
@@ -79,13 +82,13 @@
    "provides" : {
       "Ukigumo::Agent" : {
          "file" : "lib/Ukigumo/Agent.pm",
-         "version" : "v0.1.6"
+         "version" : "v0.1.7"
+      },
+      "Ukigumo::Agent::Cleaner" : {
+         "file" : "lib/Ukigumo/Agent/Cleaner.pm"
       },
       "Ukigumo::Agent::Dispatcher" : {
          "file" : "lib/Ukigumo/Agent/Dispatcher.pm"
-      },
-      "Ukigumo::Agent::Logger" : {
-         "file" : "lib/Ukigumo/Agent/Logger.pm"
       },
       "Ukigumo::Agent::Manager" : {
          "file" : "lib/Ukigumo/Agent/Manager.pm"
@@ -105,12 +108,14 @@
          "web" : "https://github.com/ukigumo/Ukigumo-Agent"
       }
    },
-   "version" : "v0.1.6",
+   "version" : "v0.1.7",
    "x_authority" : "cpan:TOKUHIROM",
    "x_contributors" : [
       "Tomohiro Hosaka <bokutin@bokut.in>",
       "mattn <mattn.jp@gmail.com>",
       "Tokuhiro Matsuno <tokuhirom@gmail.com>",
-      "moznion <moznion@gmail.com>"
+      "Yoshihiro Sugi <sugi1982@gmail.com>",
+      "ikasam_a <masaki.nakagawa@gmail.com>",
+      "Taiki Kawakami <moznion@gmail.com>"
    ]
 }

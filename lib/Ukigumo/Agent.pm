@@ -1,14 +1,26 @@
 package Ukigumo::Agent;
 use strict;
 use warnings;
-use 5.008005;
-use version; our $VERSION = version->declare("v0.1.6");
+use 5.010001;
+use version; our $VERSION = version->declare("v0.1.7");
 use parent qw(Amon2 Amon2::Web);
+use Carp ();
 
-sub config { +{ } }
+sub load_config {
+    my ($c, $file) = @_;
+
+    my $config = do $file;
+    Carp::croak("$file: $@") if $@;
+    Carp::croak("$file: $!") unless defined $config;
+    unless ( ref($config) eq 'HASH' ) {
+        Carp::croak("$file does not return HashRef.");
+    }
+
+    $config;
+}
 
 use Ukigumo::Agent::Dispatcher;
-use Ukigumo::Agent::Logger;
+use Ukigumo::Logger;
 
 __PACKAGE__->load_plugins(qw(Web::JSON ShareDir));
 
@@ -30,7 +42,7 @@ sub dispatch {
 }
 
 {
-    my $_logger = Ukigumo::Agent::Logger->new;
+    my $_logger = Ukigumo::Logger->new;
     sub logger { $_logger }
 }
 

@@ -2,29 +2,93 @@ package Ukigumo::Agent::Manager;
 use strict;
 use warnings;
 use utf8;
+use Ukigumo::Agent::Cleaner qw/cleanup_old_branch_dir/;
 use Ukigumo::Client;
 use Ukigumo::Client::VC::Git;
 use Ukigumo::Client::Executor::Perl;
-use Ukigumo::Agent::Logger;
+use Ukigumo::Helper qw/normalize_path/;
+use Ukigumo::Logger;
 use Coro;
 use Coro::AnyEvent;
 use POSIX qw/SIGTERM SIGKILL/;
-use Log::Minimal;
+use File::Spec;
+use Carp ();
 
 use Mouse;
 
-has 'children' => ( is => 'rw', default => sub { +{ } } );
-has 'work_dir' => ( is => 'rw', isa => 'Str', required => 1 );
-has 'server_url' => ( is => 'rw', isa => 'Str', required => 1 );
-has job_queue => (is => 'ro', default => sub { +[ ] });
-has max_children => ( is => 'ro', default => 1 );
-has timeout => (is => 'rw', isa => 'Int', default => 0);
-has logger => (
+has 'config' => (
+    is       => 'rw',
+    isa      => 'HashRef',
+    lazy     => 1,
+    default  => sub { +{} },
+);
+
+has 'work_dir' => (
     is      => 'ro',
-    isa     => 'Ukigumo::Agent::Logger',
-    default => sub {
-        Ukigumo::Agent::Logger->new
-    },
+    isa     => 'Str',
+    lazy    => 1,
+    default => sub { shift->config->{work_dir} // File::Spec->tmpdir },
+);
+
+has 'server_url' => (
+    is      => 'ro',
+    isa     => 'Str',
+    lazy    => 1,
+    default => sub { shift->config->{server_url} },
+);
+
+has 'timeout' => (
+    is      => 'ro',
+    isa     => 'Int',
+    lazy    => 1,
+    default => sub { shift->config->{timeout} // 0 },
+);
+
+has 'ignore_github_tags' => (
+    is      => 'ro',
+    isa     => 'Bool',
+    lazy    => 1,
+    default => sub { shift->config->{ignore_github_tags} // 0 },
+);
+
+has 'force_git_url' => (
+    is      => 'ro',
+    isa     => 'Bool',
+    lazy    => 1,
+    default => sub { shift->config->{force_git_url} // 0 },
+);
+
+has 'max_children' => (
+    is      => 'ro',
+    isa     => 'Int',
+    lazy    => 1,
+    default => sub { shift->config->{max_children} // 1 },
+);
+
+has 'cleanup_cycle' => (
+    is      => 'ro',
+    isa     => 'Int',
+    lazy    => 1,
+    default => sub { shift->config->{cleanup_cycle} || 0 },
+);
+
+has 'job_queue' => (
+    is      => 'ro',
+    isa     => 'ArrayRef',
+    default => sub { +[] },
+);
+
+has 'children' => (
+    is      => 'rw',
+    isa     => 'HashRef',
+    default => sub { +{} },
+);
+
+has 'logger' => (
+    is      => 'ro',
+    isa     => 'Ukigumo::Logger',
+    lazy    => 1,
+    default => sub { Ukigumo::Logger->new },
 );
 
 no Mouse;
@@ -46,7 +110,7 @@ sub pop_job {
 
 sub run_job {
     my ($self, $args) = @_;
-    Carp::croak "Missing args" unless $args;
+    Carp::croak("Missing args") unless $args;
 
     my $repository = $args->{repository} || die;
     my $branch     = $args->{branch} || die;
@@ -120,6 +184,12 @@ sub run_job {
     } else {
         eval { $client->run() };
         $self->logger->warnf("[child] error: $@") if $@;
+
+        if (my $cleanup_cycle = $self->cleanup_cycle) {
+            my $project_dir = File::Spec->catfile($client->workdir, normalize_path($client->project));
+            cleanup_old_branch_dir($project_dir, $cleanup_cycle);
+        }
+
         $self->logger->infof("[child] finished to work");
         exit;
     }
@@ -142,4 +212,3 @@ sub _take_a_break {
 }
 
 1;
-
